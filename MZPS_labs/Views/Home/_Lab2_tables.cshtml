@@ -1,0 +1,268 @@
+﻿@model Dictionary<int, List<List<string>>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{List<double> branchExperts = new List<double>();}
+@{List<double> smalbranchExperts = new List<double>();}
+@{List<double> usabilityExperts = new List<double>();}
+@{List<double> smalusabilityExperts = new List<double>();}
+@{List<double> programingExperts = new List<double>();}
+@{List<double> smalprogramingExperts = new List<double>();}
+@{List<double> usersExperts = new List<double>();}
+@{List<double> smalusersExperts = new List<double>();}
+@{List<double> midData = new List<double>();}
+@{List<double> smalmidData = new List<double>();}
+
+@{List<String> angbranchExperts =     Model[4][0];}
+@{List<String> angusabilityExperts =  Model[4][1];}
+@{List<String> angprogramingExperts = Model[4][2];}
+@{List<String> angusersExperts = Model[4][3];}
+@{List<String> angmidData =      Model[4][4];}
+
+<hr />
+<h2>Табл. 1. Критерії оцінювання якості ПЗ, їхні вагові коефіцієнти та оцінки експертів </h2>
+<hr />
+
+<div class="container">
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        # Критерії оцінювання якості ПЗ / Загальна/середня кількість балів
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p>1)Точність управління та обчислень</p>
+            <p>2)Ступінь стандартності інтерфейсів </p>
+            <p>3)Функціональна повнота можливостей ПЗ </p>
+            <p>4)Стійкість до помилок користувача </p>
+            <p>5)Можливість розширення функцій</p>
+            <p>6)Зручність виконання завдань </p>
+            <p>7)Простота в обслуговуванні ПЗ</p>
+            <p>8)Відповідність чинним стандартам</p>
+            <p>9)Переносність між програмноапаратного забезпеченням</p>
+            <p>10)Зручність навчання користувачів</p>
+            <p>11)Загальна/середня кількість балів</p>
+
+        </div>
+    </div>
+    <hr />
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Галузі експертів</th>
+                <th scope="col">Зручності використання</th>
+                <th scope="col">з програмування</th>
+                <th scope="col">узагальнені користувачі</th>
+
+                <th scope="col">Середнє значення</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @{int num = 1;}
+            @foreach (List<string> subList in Model[1])
+            {
+                <tr>
+                    <td scope="row">@num</td>;
+                    @{++num;}
+
+                    @foreach (string item in subList)
+                    {
+
+                        <td>@(item)</td>;
+
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+<hr />
+<h2>Табл. 2. Результати розрахунку комплексних показників якості ПЗ та їхні усереднені значення </h2>
+<hr />
+<div class="container">
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+        # Критерії оцінювання якості ПЗ / Усереднені оцінки експертів
+    </button>
+    <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+            <p>1)Точність управління та обчислень</p>
+            <p>2)Ступінь стандартності інтерфейсів </p>
+            <p>3)Функціональна повнота можливостей ПЗ </p>
+            <p>4)Стійкість до помилок користувача </p>
+            <p>5)Можливість розширення функцій</p>
+            <p>6)Зручність виконання завдань </p>
+            <p>7)Простота в обслуговуванні ПЗ</p>
+            <p>8)Відповідність чинним стандартам</p>
+            <p>9)Переносність між програмноапаратного забезпеченням</p>
+            <p>10)Зручність навчання користувачів</p>
+            <p>11)Усереднені оцінки експертів</p>
+            <p>12)Оцінки експертів з врахуванням їхньої вагомості</p>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Галузі експертів</th>
+                <th scope="col">Юзабіліті</th>
+                <th scope="col">Програмування</th>
+                <th scope="col">Користувачі</th>
+
+                <th scope="col">Усереднене значення: показник</th>
+                <th scope="col">Оцінок</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @{int num2 = 1;}
+            @foreach (List<string> subList in Model[2])
+            {
+                <tr>
+                    <td scope="row">@num2</td>;
+                    @{++num2;}
+                    @{int tmp = 0;}
+                    @foreach (string item in subList)
+                    {
+
+                        <td>@(item)</td>;
+                        if (tmp == 0)
+                        {
+                            branchExperts.Add(double.Parse(item));
+                            smalbranchExperts.Add(double.Parse(item) * double.Parse(Model[3].Last()[0]));
+                        }
+                        if (tmp == 1)
+                        {
+                            usabilityExperts.Add(double.Parse(item));
+                            smalusabilityExperts.Add(double.Parse(item) * double.Parse(Model[3].Last()[1]));
+                        }
+                        if (tmp == 2)
+                        {
+                            programingExperts.Add(double.Parse(item));
+                            smalprogramingExperts.Add(double.Parse(item) * double.Parse(Model[3].Last()[2]));
+                        }
+                        if (tmp == 3)
+                        {
+                            usersExperts.Add(double.Parse(item));
+                            smalusersExperts.Add(double.Parse(item) * double.Parse(Model[3].Last()[3]));
+                        }
+                        if (tmp == 4)
+                        {
+                            midData.Add(double.Parse(item));
+                            //smalbranchExperts.Add(double.Parse(item) * double.Parse(Model[3].Last()[4]));
+                        }
+                        ++tmp;
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<div class="container">
+    <hr />
+    <h3 class="text-center">Експерти галузі</h3>
+    <div id="branchChart"></div>
+    <hr />
+    <h3 class="text-center">Експерти юзабіліті</h3>
+    <div id="usabilityChart"></div>
+    <hr />
+    <h3 class="text-center">Експерти із програмування</h3>
+    <div id="programingChart"></div>
+    <hr />
+    <h3 class="text-center">Потенційні юзери</h3>
+    <div id="usersChart"></div>
+    <hr />
+    <h3 class="text-center">Зведені показники</h3>
+    <div id="middleChart"></div>
+    <hr />
+    <h3 class="text-center">Узагальнені показники експертів</h3>
+    <div id="allChart"></div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+        var branch =  @Html.Raw(Json.Serialize(branchExperts));
+        var usability =  @Html.Raw(Json.Serialize(usabilityExperts));
+        var programing =  @Html.Raw(Json.Serialize(programingExperts));
+        var users =  @Html.Raw(Json.Serialize(usersExperts));
+        var middle =  @Html.Raw(Json.Serialize(midData));
+
+        var smallbranch =  @Html.Raw(Json.Serialize(smalbranchExperts));
+        var smallusability =  @Html.Raw(Json.Serialize(smalusabilityExperts));
+        var smallprograming =  @Html.Raw(Json.Serialize(smalprogramingExperts));
+        var smallusers =  @Html.Raw(Json.Serialize(smalusersExperts));
+        var smallmiddle =  @Html.Raw(Json.Serialize(smalmidData));
+
+        var angBranch = (@Html.Raw(Json.Serialize(angbranchExperts))).map(function (data) {
+        return parseFloat(data, 10);
+        });
+     var angUsability = (@Html.Raw(Json.Serialize(angusabilityExperts))).map(function (data) {
+        return parseFloat(data, 10);
+     });
+     var angPrograming = (@Html.Raw(Json.Serialize(angprogramingExperts))).map(function (data) {
+        return parseFloat(data, 10);
+     });
+     var angUsers = (@Html.Raw(Json.Serialize(angusersExperts))).map(function (data) {
+        return parseFloat(data, 10);
+     });
+     var angMiddle = (@Html.Raw(Json.Serialize(angmidData))).map(function (data) {
+        return parseFloat(data, 10);
+         });
+
+        //angBranch.map(Number);
+        console.log(angBranch);
+
+    function createDiagram(bigData, smallData, angles, elId) {
+  data = [
+  {
+  type: 'scatterpolar',
+          r: bigData,
+          theta: angles,
+  fill: 'toself',
+  name: 'Normal data'
+  },
+  {
+      type: 'scatterpolar',
+      r: smallData,
+      theta: angles,
+  fill: 'toself',
+  name: 'Small data'
+  }
+]
+
+layout = {
+  polar: {
+    radialaxis: {
+      visible: true,
+      range: [0, 90]
+    }
+  }
+}
+
+Plotly.plot(elId, data, layout, {showSendToCloud: true})
+    }
+
+    createDiagram(branch, smallbranch, angBranch, "branchChart");
+    createDiagram(usability, smallusability, angUsability, "usabilityChart");
+    createDiagram(programing, smallprograming, angPrograming, "programingChart");
+    createDiagram(users, smallusers, angUsers, "usersChart");
+
+    createDiagram(branch, smallbranch, angBranch, "middleChart");
+    createDiagram(usability, smallusability, angUsability, "middleChart");
+    createDiagram(programing, smallprograming, angPrograming, "middleChart");
+    createDiagram(users, smallusers, angUsers, "middleChart");
+
+    createDiagram(middle, middle, angMiddle, "allChart");
+
+</script>

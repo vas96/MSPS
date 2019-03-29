@@ -1,0 +1,185 @@
+﻿@model Dictionary<int, List<List<string>>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<hr />
+<h2>Табл. 1. Критерії оцінювання якості ПЗ, їхні вагові коефіцієнти та оцінки експертів </h2>
+<hr />
+
+<div class="container">
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        # Критерії оцінювання якості ПЗ / Загальна/середня кількість балів
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p>1)Точність управління та обчислень</p>
+            <p>2)Ступінь стандартності інтерфейсів </p>
+            <p>3)Функціональна повнота можливостей ПЗ </p>
+            <p>4)Стійкість до помилок користувача </p>
+            <p>5)Можливість розширення функцій</p>
+            <p>6)Зручність виконання завдань </p>
+            <p>7)Простота в обслуговуванні ПЗ</p>
+            <p>8)Відповідність чинним стандартам</p>
+            <p>9)Переносність між програмноапаратного забезпеченням</p>
+            <p>10)Зручність навчання користувачів</p>
+            <p>11)Загальна/середня кількість балів</p>
+
+        </div>
+    </div>
+    <hr />
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Галузі застосування</th>
+                <th scope="col">Зручності використання</th>
+                <th scope="col">З програмування</th>
+                <th scope="col">Юзабіліті</th>
+                <th scope="col">Узагальнені користувачі</th>
+
+                <th scope="col">
+                    Середні
+                    значення показників
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int num = 1;}
+            @foreach (List<string> subList in Model[0])
+            {
+                <tr>
+                    <td scope="row">@num</td>;
+                    @{++num;}
+
+                    @foreach (string item in subList)
+                    {
+
+                        <td>@(item)</td>;
+
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<div class="container">
+    <hr />
+    @for (int i = 1; i < Model.Count - 1; i++)
+    {
+        <div class=" container">
+            <br />
+            <hr />
+            <h3 class="text-center">Табл. 2.@i. Ітераційна процедура виконання розрахунків для критерію оцінювання якості ПЗ "Стійкість до помилок користувача"</h3>
+            <hr />
+        </div>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Експерт-1</th>
+                    <th scope="col">Експерт-2</th>
+                    <th scope="col">Експерт-3</th>
+                    <th scope="col">Експерт-4</th>
+                    <th scope="col">Експерт-5</th>
+                    <th scope="col">Cума</th>
+
+                    <th scope="col">
+                        Середн.
+                    </th>
+                    <th scope="col">Різниця</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num2 = 1;}
+                @foreach (List<string> subList in Model[i])
+                {
+                    <tr>
+                        <td scope="row">@num2</td>;
+                        @{++num2;}
+
+                        @foreach (string item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+</div>
+
+
+<div class="container">
+
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        # Критерії оцінювання якості ПЗ / Загальна/середня кількість балів
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p>1)Точність управління та обчислень</p>
+            <p>2)Ступінь стандартності інтерфейсів </p>
+            <p>3)Функціональна повнота можливостей ПЗ </p>
+            <p>4)Стійкість до помилок користувача </p>
+            <p>5)Можливість розширення функцій</p>
+            <p>6)Зручність виконання завдань </p>
+            <p>7)Простота в обслуговуванні ПЗ</p>
+            <p>8)Відповідність чинним стандартам</p>
+            <p>9)Переносність між програмноапаратного забезпеченням</p>
+            <p>10)Зручність навчання користувачів</p>
+            <p>11)Загальна/середня кількість балів</p>
+
+        </div>
+    </div>
+    <hr />
+    <h3>Табл. 3. Критерії оцінювання якості ПЗ, їхні вагові коефіцієнти та оцінки експертів</h3>
+    <hr />
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Галузі застосування</th>
+                <th scope="col">Зручності використання</th>
+                <th scope="col">З програмування</th>
+                <th scope="col">Узагальнені користувачі</th>
+
+                <th scope="col">
+                    Середні
+                    значення показників
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int num3 = 1;}
+            @foreach (List<string> subList in Model[Model.Count - 1])
+            {
+                <tr>
+                    <td scope="row">@num3</td>;
+                    @{++num3;}
+
+                    @foreach (string item in subList)
+                    {
+
+                        <td>@(item)</td>;
+
+                    }
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<script>
+
+</script>

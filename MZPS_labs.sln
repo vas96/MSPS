@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MZPS_labs", "MZPS_labs\MZPS_labs.csproj", "{8BC820B8-4E7B-4C1C-B880-2BD91DBB0F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BC820B8-4E7B-4C1C-B880-2BD91DBB0F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC820B8-4E7B-4C1C-B880-2BD91DBB0F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC820B8-4E7B-4C1C-B880-2BD91DBB0F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC820B8-4E7B-4C1C-B880-2BD91DBB0F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F067234F-AB2F-42D7-8D77-C581FEAFC9A1}
+	EndGlobalSection
+EndGlobal

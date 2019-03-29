@@ -1,0 +1,54 @@
+﻿@model List<double[]>
+@{
+    ViewData["Title"] = "firstMethod";
+}
+<hr />
+<h2>Результати розрахунків за ітераціями з використанням механізму редукторів ступенів свободи </h2>
+<h6>Умова зупинки λx = 0,005</h6>
+<hr />
+
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                @for (int i = 1; i < (int) @Model[Model.Count-1][0]+1; i++)
+                {
+                    <th>Експерт-@i</th>
+                }
+
+                <th>Сума</th>
+                <th></th>
+                
+                <th>Коефіцієнт</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 1; i < Model.Count-2; i++)
+            {
+                <tr>
+
+                    @foreach (double data in Model[i])
+                    {
+                        if (data.Equals(Model[i].Last()) && (i != 0) && ((i) % 4 == 0))
+                        {
+                            <td></td>
+                        }
+                        if (((i) % 4 == 0) && (i != 0))
+                        {
+                            <td class="bg-info">@data</td>
+                        }
+                        else if (((i) % 4 == 0) || (i == 0))
+                        {
+                            <td class="bg-light">@data</td>
+                        }
+                        else
+                        {
+                            <td class="">@data</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div><h4> У нашому прикладі найбільш інформативним виявиться @Model[Model.Count - 2][0]-ий канал.(@Model[Model.Count - 2][1]) </h4></div>

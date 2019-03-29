@@ -1,0 +1,69 @@
+﻿@*@model List<double[]>*@
+@{
+    ViewData["Title"] = "Lab1_2";
+}
+<a asp-area="" asp-controller="Home" asp-action="Lab1">5 вхідних параметрів</a><br />
+<a asp-area="" asp-controller="Home" asp-action="Lab1_2">6 вхідних параметрів</a><br />
+<a asp-area="" asp-controller="Home" asp-action="Lab1_3">7 вхідних параметрів</a><br />
+<hr />
+<h3>Масив вхідних даних</h3>
+<form class="form-inline">
+
+    <input type="text" value="8,000" class="form-control mb-2 mr-sm-2" name="data">
+    <input type="text" value="9,800" class="form-control mb-2 mr-sm-2" name="data">
+    <input type="text" value="9,200" class="form-control mb-2 mr-sm-2" name="data">
+    <input type="text" value="6,600" class="form-control mb-2 mr-sm-2" name="data">
+    <input type="text" value="7,000" class="form-control mb-2 mr-sm-2" name="data">
+    <input type="text" value="8,900" class="form-control mb-2 mr-sm-2" name="data">
+</form>
+<hr />
+<div class="container-fluid">
+    <button type="button" class="btn btn-primary mb-2" id="send">Розрахунки за ітераціями з використанням механізму дискримінаторів ступенів свободи</button>
+    <button type="button" class="btn btn-primary mb-2" id="send2">Розрахунки за ітераціями з використанням механізму редукторів ступенів свободи </button>
+    <button type="button" class="btn btn-primary mb-2" id="send3">Розрахунки за ітераціями з використанням механізму редукторів ступенів свободи (Формула-3)</button>
+    <button type="button" class="btn btn-primary mb-2" id="send4">Розрахунки за ітераціями з використанням механізму редукторів ступенів свободи (Формула-4)</button>
+
+</div>
+<div id="Partial"></div>
+
+
+@*@{await Html.RenderPartialAsync("_part1");}*@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    function toDo2(button, url) {
+        $(button).click(function (e) {
+            e.preventDefault();
+            var arr = [];
+            $('input[name^="data"]').each(function () {
+                arr.push($(this).val());
+            });
+            console.log(arr);
+            var data = {
+                arr
+            };
+            $.ajax({
+                url: url,
+                type: 'POST',
+                cache: false,
+                async: true,
+                dataType: "html",
+                data: data,
+                success: function (result) {
+                    console.log(result);
+                    $("#Partial").empty();
+                    $("#Partial").html(result);
+                }
+            })
+                .done(function (result) {
+                });
+        });
+    }
+
+
+    toDo2('#send', './secondMethod');
+    toDo2('#send2', './firstMethod');
+    toDo2('#send3', './thirdMethod');
+    toDo2('#send4', './fourhMethod');
+</script>

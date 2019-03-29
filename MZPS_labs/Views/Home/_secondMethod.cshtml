@@ -1,0 +1,81 @@
+﻿@model List<double[]>
+@{
+    ViewData["Title"] = "secondMethod";
+}
+<hr />
+<h2>Результати розрахунків за ітераціями з використанням механізму дискримінаторів ступенів свободи </h2>
+<hr />
+
+
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                @for (int i = 1; i < (int)@Model[Model.Count - 1][0] + 1; i++)
+                {
+                    <th>Експерт-@i</th>
+                }
+                <th>Сума</th>
+                <th>Середнє знач.</th>
+                <th>Коефіцієнт</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Model.Count-2; i++)
+            {
+                <tr>
+
+                    @foreach (double data in Model[i])
+                    {
+
+                        if (((i + 1) % 4 == 0) && (i != 0))
+                        {
+                            <td class="bg-info">@data</td>
+                        }
+                        else if (((i) % 4 == 0) || (i == 0))
+                        {
+                            <td class="bg-light">@data</td>
+                        }
+                        else
+                        {
+                            <td class="">@data</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+<div><h4> У нашому прикладі найбільш інформативним виявиться @Model[Model.Count - 2][0]-ий канал.(@Model[Model.Count - 2][1]) </h4></div>
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+     $("#send2").click(function (e) {
+         e.preventDefault();
+         var array = [];
+         $('input[name="data1"]').each(function () {
+             array.push($(this).val());
+         });
+         console.log(array);
+                    var data = {
+                        //grant_type: 'password',
+                        array
+                    };
+                      $.ajax({
+                async: true,
+                          url: "part1",
+                 contentType = 'application/json; charset=utf-8',
+                          type: "POST",
+                          data: data,
+                success: function (result) {
+                    waitingDialog.hide();
+                    $("#Partial").html(result);
+                }
+            });
+
+                });
+
+    </script>*@

@@ -1,0 +1,432 @@
+﻿@model Dictionary<int, List<List<double>>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container">
+    <hr />
+    <h2>Табл. 1. Опрацьовані вхідні дані</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) Кн</p>
+                <p>12) ak</p>
+                <p>13) max</p>
+                <p>14) min</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num = 1;}
+                @foreach (List<double> subList in Model[0])
+                {
+                    <tr>
+                        <td scope="row">@num</td>;
+                        @{++num;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 2. Мультиплікативна згортка за (1)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">fi(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num2 = 1;}
+                @foreach (List<double> subList in Model[1])
+                {
+                    <tr>
+                        <td scope="row">@num2</td>;
+                        @{++num2;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 3. Мультиплікативна згортка за (2)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">Пs</th>
+                    <th scope="col">Пd</th>
+                    <th scope="col">fi(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[2])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 4. Мультиплікативна згортка за (3)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">Пs</th>
+                    <th scope="col">Пd</th>
+                    <th scope="col">fi(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[3])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 5. Мультиплікативна згортка за (4)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">Пs</th>
+                    <th scope="col">Пd</th>
+                    <th scope="col">ri(xi)</th>
+                    <th scope="col">ri'(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[4])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 6. Мультиплікативна згортка за (5)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">Пs</th>
+                    <th scope="col">Пd</th>
+                    <th scope="col">hi(xi)</th>
+                    <th scope="col">hi'(xi)</th>
+                    <th scope="col">ni(xi)</th>
+                    <th scope="col">ni'(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[5])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 7. Мультиплікативна згортка за (9 i 10)</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">K1</th>
+                    <th scope="col">K2</th>
+                    <th scope="col">K3</th>
+                    <th scope="col">K4</th>
+                    <th scope="col">K5</th>
+                    <th scope="col">Пs</th>
+                    <th scope="col">Пd</th>
+
+                    <th scope="col">ni(xi)</th>
+                    <th scope="col">ni'(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[6])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 8. Ранжування варіантів ІС</h2>
+    <hr />
+
+    <div class="container">
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#_п/п</th>
+                    <th scope="col">#_вар</th>
+                    <th scope="col">ni(xi)</th>
+                    <th scope="col">ni'(xi)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (List<double> subList in Model[7])
+                {
+                    <tr>
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
