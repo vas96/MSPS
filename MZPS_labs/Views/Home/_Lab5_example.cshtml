@@ -1,0 +1,1088 @@
+﻿@model Dictionary<int, IList<List<double>>>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="container">
+    <hr />
+    <h2>Табл. 1.  Вхідні дані</h2>
+    <hr />
+
+
+    <div class="container">
+
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) Кн</p>
+                <p>12) ak</p>
+                <p>13) max</p>
+                <p>14) min</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ftp</th>
+                    <th scope="col">Ncp</th>
+                    <th scope="col">Cp</th>
+                    <th scope="col">fTRAM</th>
+                    <th scope="col">Vram</th>
+                    <th scope="col">Vhdd</th>
+                    <th scope="col">Shdd</th>
+                    <th scope="col">Npt</th>
+                    <th scope="col">Npr</th>
+                    <th scope="col">Vn</th>
+                    <th scope="col">Cnet</th>
+                    <th scope="col">Rp</th>
+                    <th scope="col">Vpr</th>
+                    <th scope="col">Re</th>
+                    <th scope="col">Vpram</th>
+                    <th scope="col">Ccos</th>
+                    <th scope="col">Ncos</th>
+                    <th scope="col">Ntos</th>
+                    <th scope="col">Nuos</th>
+                    <th scope="col">Tos</th>
+                    <th scope="col">Cdb</th>
+                    <th scope="col">Vdb</th>
+                    <th scope="col">Vdbt</th>
+                    <th scope="col">Vdbcb</th>
+                    <th scope="col">Vdbdt</th>
+                    <th scope="col">Tdb</th>
+                    <th scope="col">Ce</th>
+                    <th scope="col">Nef</th>
+                    <th scope="col">Ned</th>
+                    <th scope="col">Ved</th>
+                    <th scope="col">Crg</th>
+                    <th scope="col">Vrgin</th>
+                    <th scope="col">Nrgc</th>
+                    <th scope="col">Nrgfr</th>
+                    <th scope="col">Nrggf</th>
+                    <th scope="col">Nrgdb</th>
+                    <th scope="col">Trg</th>
+                    <th scope="col">Nnm</th>
+                    <th scope="col">Pnm</th>
+                    <th scope="col">Tnm</th>
+                    <th scope="col">Tpd</th>
+                    <th scope="col">Tpid</th>
+                    <th scope="col">Tarr</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num = 1;}
+                @foreach (List<double> subList in Model[0])
+                {
+                    <tr>
+                        <td scope="row">@num</td>;
+                        @{++num;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@item</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 2. Інтегральні показники НТР</h2>
+    <hr />
+    <div class="container">
+
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ppc</th>
+                    <th scope="col">Pnet</th>
+                    <th scope="col">Pp</th>
+                    <th scope="col">Pos</th>
+                    <th scope="col">Pdb</th>
+                    <th scope="col">Pe</th>
+                    <th scope="col">Prg</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num2 = 1;}
+                @foreach (List<double> subList in Model[1])
+                {
+                    <tr>
+                        <td scope="row">@num2</td>;
+                        @{++num2;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00000"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 3. Інтегральні показники НТР (додаткова таблиця)</h2>
+    <hr />
+    <div class="container">
+
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ppc</th>
+                    <th scope="col">Pnet</th>
+                    <th scope="col">Pp</th>
+                    <th scope="col">Pos</th>
+                    <th scope="col">Pdb</th>
+                    <th scope="col">Pe</th>
+                    <th scope="col">Prg</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int num3 = 1;}
+                @foreach (List<double> subList in Model[2])
+                {
+                    <tr>
+                        <td scope="row">@num3</td>;
+                        @{++num3;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00000"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="container">
+    <hr />
+    <h2>Табл. 4. Вектори</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Prs</p>
+                <p scope="col">2)Pss</p>
+                <p scope="col">3)Pms</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    @*@for (int i = 0; i < Model[3].Count; i++)
+                            {
+                        <th scope="col">@i</th>
+                            }*@
+                </tr>
+            </thead>
+            <tbody>
+                @{int num4 = 1;}
+                @foreach (List<double> subList in Model[3])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00000"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+@*//ZEQ*@
+<div class="container">
+    <hr />
+    <h2>Табл. 5. TЗ_ПЗ(Zeq)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">-</th>
+                    <th scope="col">fTp</th>
+                    <th scope="col">fTram</th>
+                    <th scope="col">Shdd</th>
+                    <th scope="col">Npt</th>
+                    <th scope="col">Npr</th>
+                    <th scope="col">Vpr</th>
+                    <th scope="col">Re</th>
+                    @*@for (int i = 0; i < Model[3].Count; i++)
+                            {
+                        <th scope="col">@i</th>
+                            }*@
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[4])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+                        @if (subList == Model[4][0])
+                        {
+                            <td></td>;
+                        }
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+@*//HEQ*@
+<div class="container">
+    <hr />
+    <h2>Табл. 6. ПЗ_МЗ(Heq)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">-</th>
+                    <th scope="col">fTp</th>
+                    <th scope="col">fTram</th>
+                    <th scope="col">Shdd</th>
+                    <th scope="col">Npt</th>
+                    <th scope="col">Npr</th>
+                    <th scope="col">Vpr</th>
+                    <th scope="col">Re</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[5])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+                        @if (subList == Model[5][0])
+                        {
+                            <td></td>;
+                        }
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+@*//ZUS*@
+<div class="container">
+    <hr />
+    <h2>Табл. 7. TЗ_ПЗ(Zus)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">-</th>
+                    <th scope="col">fTp</th>
+                    <th scope="col">fTram</th>
+                    <th scope="col">Shdd</th>
+                    <th scope="col">Npt</th>
+                    <th scope="col">Npr</th>
+                    <th scope="col">Vpr</th>
+                    <th scope="col">Re</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[7])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+                        @if (subList == Model[7][0])
+                        {
+                            <td></td>;
+                        }
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+@*//HUS*@
+<div class="container">
+    <hr />
+    <h2>Табл. 8. ПЗ_МЗ(Hus)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">-</th>
+                    <th scope="col">Tpd</th>
+                    <th scope="col">Tpid</th>
+                    <th scope="col">Tarr</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[6])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+                        @if (subList == Model[6][0])
+                        {
+                            <td></td>;
+                        }
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Incidence matrix 1*@
+<div class="container">
+    <hr />
+    <h2>Табл. 9. Матриця інцидентності(ПЗ*ТЗ)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+
+                    <th scope="col">fTp</th>
+                    <th scope="col">fTram</th>
+                    <th scope="col">Shdd</th>
+                    <th scope="col">Npt</th>
+                    <th scope="col">Npr</th>
+                    <th scope="col">Vpr</th>
+                    <th scope="col">Re</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[8])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+                            <td>@(item.ToString("0.00"))</td>;
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Incidence matrix 2*@
+<div class="container">
+    <hr />
+    <h2>Табл. 10. Матриця інцидентності(МЗ*ПЗ)</h2>
+    <hr />
+    <div class="container">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+
+                    <th scope="col">Tpd</th>
+                    <th scope="col">Tpid</th>
+                    <th scope="col">Tarr</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[9])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+@*//divided matrix 1*@
+<div class="container">
+    <hr />
+    <h2>Табл. 11. Rtss</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                    <th scope="col">7</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[10])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//divided matrix 2*@
+<div class="container">
+    <hr />
+    <h2>Табл. 12. Rmsss</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[11])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Multiplication-1*@
+<div class="container">
+    <hr />
+    <h2>Табл. 13. Multiplication-1</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[12])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Multiplication-2*@
+<div class="container">
+    <hr />
+    <h2>Табл. 13. Multiplication-1</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[13])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Multiplication-3*@
+<div class="container">
+    <hr />
+    <h2>Табл. 13. Multiplication-1</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[14])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Result*@
+<div class="container">
+    <hr />
+    <h2>Табл. 14. Result</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{num4 = 1;}
+                @foreach (List<double> subList in Model[15])
+                {
+                    <tr>
+                        <td scope="row">@num4</td>;
+                        @{++num4;}
+
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.00"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@*//Result*@
+<div class="container">
+    <hr />
+    <h2>Табл. 16. Parametrs</h2>
+    <hr />
+    <div class="container">
+        @*<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                # Значення
+            </button>*@
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p scope="col">1)Ncos</p>
+                <p scope="col">2)Ntos</p>
+                <p scope="col">3)Nuos</p>
+                <p scope="col">4)Vdbt</p>
+                <p scope="col">5)Vdcr</p>
+                <p scope="col">6)Vdbdt</p>
+                <p scope="col">7)Tdb</p>
+                <p scope="col">8)Nef</p>
+                <p scope="col">9)Ned</p>
+                <p scope="col">10)Ved</p>
+                <p scope="col">11)Nrgc</p>
+                <p scope="col">12)Nrgf</p>
+                <p scope="col">13)Nrggf</p>
+                <p scope="col">14)Nrgdb</p>
+                <p scope="col">15)Nrgin</p>
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">|P|</th>
+                    <th scope="col">Rtsss</th>
+                    <th scope="col">Rmsss</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            @{num4 = 1;}
+            @foreach (List<double> subList in Model[16])
+            {
+                <tr>
+                    <td scope="row">@num4</td>;
+                    @{++num4;}
+
+                    @foreach (double item in subList)
+                    {
+
+                        <td>@(item.ToString("0.00"))</td>;
+
+                    }
+                </tr>
+            }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@*@model List<double[]>*@
+@{
+    ViewData["Title"] = "Lab3";
+}
+
+<h3>Lab5</h3>
+@*<form class="form-inline">
+
+        <input type="text" value="0,700" class="form-control mb-2 mr-sm-2" name="data">
+        <input type="text" value="0,800" class="form-control mb-2 mr-sm-2" name="data">
+        <input type="text" value="0,900" class="form-control mb-2 mr-sm-2" name="data">
+        <input type="text" value="0,500" class="form-control mb-2 mr-sm-2" name="data">
+
+    </form>*@
+<hr />
+<div class="container-fluid">
+    <button type="button" class="btn btn-primary mb-2" id="send2">Розрахунки</button>
+    @*<button type="button" class="btn btn-primary mb-2" id="send">Розрахунки - 2</button>*@
+</div>
+<div id="Partial"></div>
+
+@*@{await Html.RenderPartialAsync("_part1");}*@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    function toDo2(button, url) {
+        $(button).click(function (e) {
+            e.preventDefault();
+            
+            $.ajax({
+                url: url,
+                type: 'POST',
+                cache: false,
+                async: true,
+                dataType: "html",
+               
+                success: function (result) {
+                    console.log(result);
+                    $("#Partial").empty();
+                    $("#Partial").html(result);
+                }
+            })
+                .done(function (result) {
+                });
+        });
+    }
+
+    //toDo2('#send', './Lab_3MyVariant');
+    toDo2('#send2', './Lab5_example');
+    toDo2('#send', './Lab4_MyVariant');
+</script>
