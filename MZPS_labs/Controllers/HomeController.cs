@@ -126,9 +126,13 @@ namespace MZPS_labs.Controllers
             return View();
         }
 
+        public IActionResult Lab6()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
-            // Lab5 lab5 = new Lab5();
             return View();
         }
 
@@ -295,6 +299,13 @@ namespace MZPS_labs.Controllers
             var res = data.FullResult();
 
             return PartialView("_Lab5_example", res);
+        }
+        public IActionResult Lab6_example()
+        {
+            Lab6 data = new Lab6();
+            var res = data.FullResult();
+
+            return PartialView("_Lab6_example", res);
         }
 
 
@@ -2321,6 +2332,160 @@ namespace MZPS_labs.Controllers
             result.Add(16, parametrsList);
             return result;
 
+        }
+    }
+
+    public class Lab6
+    {
+        private static List<double> nList = new List<double>() { 0.1, 0.05 };
+        private static List<double> bList = new List<double>() { 15.0, 2.00 };
+        private static List<double> aList = new List<double>() { 2, 1.0 };
+
+        private static List<double> lamdaList = new List<double>() { 0.1, 0.005 };
+        private static List<double> qList = new List<double>() { 0.1, 0.005 };
+        private static double t = -1.49;
+        private static double A = 1.11;
+
+        private static List<double> kList = new List<double>() { 1, 2, 3, 4, 5, };
+
+        private static List<double> lList = new List<double>() { 3, 2.0 };
+
+        private static List<double> c1List = new List<double>() { 1.5, 0.5 };
+        private static List<double> c2List = new List<double>() { 1.1, 0.4 };
+        private static List<double> c3List = new List<double>() { 0.7, 0.3 };
+        private static List<double> c4List = new List<double>() { 0.5, 0.2 };
+        private static List<double> c5List = new List<double>() { 0.2, 0.1 };
+
+        private static List<double> ExptC3List = new List<double>() { 0.7, 0.9 };
+        private static List<double> ExptC4List = new List<double>() { 0.6, 0.5 };
+
+        private static double GetRandomNumber(double minimum, double maximum)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (maximum - minimum) + minimum;
+        }
+
+        public Lab6()
+        {
+
+        }
+
+        private static IList<List<double>> CreateMatrix()
+        {
+            var result = new List<List<double>>();
+
+            for (int i = 0; i < 25; i++)
+            {
+                var tempList = new List<double>();
+                //l
+                tempList.Add(Math.Round((lList[0] + lList[1]) * GetRandomNumber(0.1, 1.7), 0));
+                //i
+                tempList.Add(i+1);
+                //r
+                tempList.Add(Math.Round((nList[0] + nList[1]) * GetRandomNumber(0.1, 1.7), 0));
+                //B
+                tempList.Add(Math.Round((bList[0] + bList[1]) * GetRandomNumber(0.1, 1.7), 0));
+                //C
+                tempList.Add(Math.Round((aList[0] + aList[1]) * GetRandomNumber(0.1, 1.7), 2));
+                //S_1
+                tempList.Add(Math.Round((tempList[tempList.Count - 2] - A * tempList.Last()) / Math.Pow((1 + tempList[2]), tempList[1]) * GetRandomNumber(0.1, 1.7), 2));
+                //C_1
+                tempList.Add(Math.Round((kList[0] <= tempList[0] ? (c1List[0] + c1List[1]) : 0) * GetRandomNumber(0.1, 2.7), 2));
+                //C_2
+                tempList.Add(Math.Round((kList[1] <= tempList[0] ? (c2List[0] + c2List[1]) : 0) * GetRandomNumber(0.1, 2.7), 2));
+                //C_3
+                tempList.Add(Math.Round((kList[2] <= tempList[0] ? (c3List[0] + c3List[1]) : 0) * GetRandomNumber(0.1, 2.7), 2));
+                //C_4
+                tempList.Add(Math.Round((kList[3] <= tempList[0] ? (c4List[0] + c4List[1]) : 0) * GetRandomNumber(0.1, 2.7), 2));
+                //C_5
+                tempList.Add(Math.Round((kList[4] <= tempList[0] ? (c5List[0] + c5List[1]) : 0) * GetRandomNumber(0.1, 2.7), 2));
+                //sum C
+                tempList.Add(Math.Round(tempList.Skip(tempList.Count - 5).Sum(), 2));
+                //S_2
+                tempList.Add(Math.Round((tempList.Last()) / Math.Pow((1 + tempList[2]), tempList[1]), 2));
+                //Exp(tCi)_1
+                tempList.Add(Math.Round((kList[0] <= tempList[0] ? (Math.Exp(t * tempList[6])) : 0) * GetRandomNumber(0.1, 2.7), 3));
+                //Exp(tCi)_2
+                tempList.Add(Math.Round((kList[1] <= tempList[0] ? (Math.Exp(t * tempList[7])) : 0) * GetRandomNumber(0.1, 2.7), 3));
+                //Exp(tCi)_3
+                tempList.Add(Math.Round((kList[2] <= tempList[0] ? (Math.Exp(t * tempList[8])) : 0) * GetRandomNumber(0.1, 2.7), 3));
+                //Exp(tCi)_4
+                tempList.Add(Math.Round((kList[3] <= tempList[0] ? (Math.Exp(t * tempList[9])) : 0) * GetRandomNumber(0.1, 2.7), 3));
+                //Exp(tCi)_5
+                tempList.Add(Math.Round((kList[4] <= tempList[0] ? (Math.Exp(t * tempList[10])) : 0) * GetRandomNumber(0.1, 2.7), 3));
+                //sum Exp(tCi)
+                tempList.Add(Math.Round(tempList.Skip(tempList.Count - 5).Sum(), 3));
+                //S_3
+                tempList.Add(Math.Round((tempList.Last()) / Math.Pow((1 + tempList[2]), tempList[1]), 3));
+                //S
+                tempList.Add(Math.Round(Math.Abs(tempList.Last() - tempList[18] - tempList[11]), 3));
+
+                result.Add(tempList);
+            }
+
+            return result;
+        }
+
+        private static IList<List<double>>RiskResult(IList<List<double>> matrix)
+        {
+            var result = new List<List<double>>();
+            var temp = new List<double>();
+            //min
+            temp.Add(matrix.Select(l => l.Last()).Max());
+            //max
+            temp.Add(matrix.Select(l => l.Last()).Min());
+            //avCnvp
+            temp.Add((matrix.Select(l => l.Last()).Max() + matrix.Select(l => l.Last()).Min()) / 2);
+            //Cnvp
+            temp.Add(matrix.Select(l => l.Last()).Last() - matrix.Select(l => l[18]).Last() - matrix.Select(l => l[11]).Last());
+            //a
+            if (temp.Last() < temp[1])
+            {
+                temp.Add(0);
+            }
+            else if (temp.Last() >= temp[1] && temp.Last() < temp[2])
+            {
+                temp.Add((temp.Last() - temp[1]) / (temp[2] - temp[1]));
+            }
+            else if (temp.Last() >= temp[1] && temp.Last() < temp[0])
+            {
+                temp.Add((temp[0] - temp.Last() / (temp[0] - temp[2])));
+            }
+            else
+            {
+                temp.Add(1);
+            }
+
+            //R
+            if (temp[3]>=temp[0])
+            {
+                temp.Add(1);
+            }
+            else
+            {
+                temp.Add((temp[3] - temp[1]) / (temp[1] - temp[0])); 
+            }
+            //rnvp
+            temp.Add(0);
+            //RL
+            if (temp[3]<=temp[2])
+            {
+                temp.Add(Math.Pow(temp[1],2)/ ( (temp[2]-temp[1]) * (temp[0] - temp[1]) ) );
+            }
+            else
+            {
+                temp.Add(1 - (Math.Pow(temp[0], 2)) / ((temp[0] - temp[2]) * (temp[0] - temp[1])));
+            }
+
+            result.Add(temp);
+            return result;
+        }
+
+        public Dictionary<int, IList<List<double>>> FullResult()
+        {
+            var result = new Dictionary<int, IList<List<double>>> { { 0, CreateMatrix() } };
+            result.Add(1, RiskResult(result[0]));
+            return result;
         }
     }
 }

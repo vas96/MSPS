@@ -1,0 +1,133 @@
+﻿@model Dictionary<int, IList<List<double>>>
+
+@{
+    ViewData["Title"] = "_Lab6_example";
+}
+
+<div class="container">
+    <hr />
+    <h2>Табл. 1. Визначення чистої приведеної вартості реалізації проекту розроблення ПЗ</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) Кн</p>
+                <p>12) ak</p>
+                <p>13) max</p>
+                <p>14) min</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">l</th>
+                    <th scope="col">i</th>
+                    <th scope="col">ri</th>
+                    <th scope="col">Bi</th>
+                    <th scope="col">Ci</th>
+                    <th scope="col">Si_1</th>
+                    <th scope="col">Ci_1</th>
+                    <th scope="col">Ci_2</th>
+                    <th scope="col">Ci_3</th>
+                    <th scope="col">Ci_4</th>
+                    <th scope="col">Ci_5</th>
+
+                    <th scope="col">sum Ci(l)</th>
+                    <th scope="col">Si_2</th>
+
+                    <th scope="col">Exp(tCi(1))</th>
+                    <th scope="col">Exp(tCi(2))</th>
+                    <th scope="col">Exp(tCi(3))</th>
+                    <th scope="col">Exp(tCi(4))</th>
+                    <th scope="col">Exp(tCi(5))</th>
+
+                    <th scope="col">sum Exp</th>
+                    <th scope="col">Si_3</th>
+                    <th scope="col">Cnvp_i</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                @foreach (List<double> subList in Model[0])
+                {
+                    <tr>
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item)</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <hr />
+    <h2>Табл. 2. Результати</h2>
+    <hr />
+
+    <div class="container">
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            # Значення
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <p>11) x*</p>
+                <p>12) i*</p>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">maxCnvp</th>
+                    <th scope="col">minCnv</th>
+                    <th scope="col">avCnvp</th>
+                    <th scope="col">Cnvp</th>
+                    <th scope="col">a</th>
+                    <th scope="col">R</th>
+                    <th scope="col">Rnvp</th>
+                    <th scope="col">RL</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach (List<double> subList in Model[1])
+                {
+                    <tr>
+                
+                        @foreach (double item in subList)
+                        {
+
+                            <td>@(item.ToString("0.000000"))</td>;
+
+                        }
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+
+
+
